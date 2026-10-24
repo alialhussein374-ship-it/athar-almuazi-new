@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111315">
+<title>الأثر الموازي | القضية 001</title>
+<style>
+:root{--bg:#101214;--panel:#191c20;--panel2:#20242a;--ink:#f1eee7;--muted:#a9adb4;--gold:#c5a66b;--line:#393d43;--red:#a64c45}
+*{box-sizing:border-box} body{margin:0;background:radial-gradient(ellipse at top,#26272a 0,#101214 55%);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.9}
+button{font:inherit;cursor:pointer} .wrap{max-width:820px;margin:auto;padding:18px 14px 40px}
+.top{display:flex;justify-content:space-between;gap:10px;align-items:center;color:var(--muted);font-size:.82rem;margin-bottom:16px}
+.logo{letter-spacing:.04em;color:var(--gold);font-weight:700}
+.hero{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:18px;padding:28px 22px;background:linear-gradient(135deg,rgba(197,166,107,.12),transparent 45%),linear-gradient(0deg,#17191d,#24262a);min-height:210px;display:flex;flex-direction:column;justify-content:end}
+.hero:after{content:"017";position:absolute;left:15px;top:-30px;font-size:9rem;color:#ffffff08;font-weight:900;letter-spacing:-.1em}
+.kicker{font-size:.76rem;color:var(--gold);letter-spacing:.1em}.hero h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.25;margin:8px 0}.hero p{margin:0;color:#d0d0cc;max-width:560px}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.badge{border:1px solid #595044;color:#d8c49e;border-radius:999px;padding:3px 10px;font-size:.75rem}
+.card{background:rgba(25,28,32,.96);border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:14px;box-shadow:0 10px 35px #0002}
+.meta{display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--muted);font-size:.82rem;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:16px}
+h2{font-size:1.45rem;line-height:1.4;margin:0 0 12px} h3{font-size:1.05rem;color:var(--gold);margin:20px 0 6px}
+p{margin:0 0 13px}.quote{border-right:3px solid var(--gold);padding:10px 14px;background:#ffffff06;color:#e7ddc9;margin:14px 0;border-radius:5px}
+.evidence{display:flex;gap:12px;align-items:flex-start;padding:12px;border:1px solid var(--line);background:#ffffff04;border-radius:12px;margin:10px 0}
+.evidence .num{flex:0 0 34px;height:34px;display:grid;place-items:center;border-radius:8px;background:#3b3325;color:var(--gold);font-weight:bold}
+.choices{display:grid;gap:10px;margin-top:16px}.choice{display:flex;gap:12px;align-items:flex-start;text-align:right;width:100%;background:var(--panel2);color:var(--ink);border:1px solid #42464d;border-radius:12px;padding:13px}.choice:hover,.choice:focus{border-color:var(--gold);outline:none}.choice.selected{border-color:var(--gold);background:#3a3327}.letter{display:grid;place-items:center;min-width:32px;height:32px;border-radius:8px;background:#34373c;color:var(--gold);font-weight:bold}.choice small{display:block;color:var(--muted);font-size:.85rem;margin-top:3px}
+.primary,.secondary{width:100%;border:0;border-radius:11px;padding:13px 16px;font-weight:bold;margin-top:12px}.primary{background:var(--gold);color:#171717}.primary:disabled{opacity:.4;cursor:not-allowed}.secondary{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.progress{height:5px;background:#30343a;border-radius:999px;overflow:hidden;margin:12px 0 4px}.progress span{display:block;height:100%;background:var(--gold);transition:width .25s}
+.footer{text-align:center;color:var(--muted);font-size:.78rem;margin-top:22px}.hidden{display:none!important}.ending{border-color:#7d6944;background:linear-gradient(135deg,#29251d,#191c20)}
+@media(min-width:650px){.wrap{padding-top:28px}.card{padding:26px}.hero{padding:36px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top"><span class="logo">الأثر الموازي</span><span>لعبة تحقيق تفاعلية</span></div>
+  <header class="hero">
+    <div class="kicker">ملف القضية رقم 001</div>
+    <h1>المكالمة الأخيرة</h1>
+    <p>قرار واحد. أربع مراحل. ونهاية تكشف ما كان مخفيًا.</p>
+    <div class="badges"><span class="badge">فكرة وتطوير: علي | Ali</span><span class="badge">الأثر الموازي</span></div>
+    <div class="badges"><span class="badge">تحقيق نفسي</span><span class="badge">4 أجزاء كحد أقصى</span><span class="badge">اختيارات متفرعة</span></div>
+  </header>
+  <section id="intro" class="card">
+    <div class="meta"><span>قبل بدء التحقيق</span><span>المدة: 3–5 دقائق</span></div>
+    <h2 id="welcomeTitle">ملفّك بانتظارك.</h2>
+    <p>قبل ما تبدأ، اكتب اسمك. رح يظهر اسمك على ملف القضية وداخل تجربة التحقيق.</p>
+    <label for="playerName" style="display:block;color:var(--gold);margin:14px 0 6px;font-weight:bold">اسم المحقّق / المحقّقة</label>
+    <input id="playerName" type="text" maxlength="32" autocomplete="given-name" placeholder="اكتب اسمك هون..." style="display:block;width:100%;padding:13px 14px;border-radius:10px;border:1px solid var(--line);background:#111315;color:var(--ink);font:inherit;outline-color:var(--gold)" />
+    <p id="nameError" style="color:#e7a39c;font-size:.9rem;margin:7px 0 12px" role="alert"></p>
+    <p>الساعة 11:47 ليلًا. يرن هاتفك، ويظهر على الشاشة رقمك أنت.</p>
+    <div class="quote">«إذا فتحت الباب بكرا الساعة 8، رح تخسر شخصًا ما بتعرف إنك رح تخسره.»</div>
+    <p>تنقطع المكالمة. بعد ثوانٍ تصلك صورة لباب بيتك، ملتقطة من الداخل.</p>
+    <p>لا توجد أدلة كافية لتعرف إن كان الاتصال تحذيرًا، خدعة، أم محاولة لدفعك إلى قرار محدد. كل اختيار سيغيّر الطريق، لكنك ستصل إلى نهاية القضية في الجزء الرابع.</p>
+    <button class="primary" id="start">فتح ملف القضية</button>
+  </section>
+  <section id="game" class="card hidden" aria-live="polite">
+    <div class="meta"><span id="partLabel">الجزء الأول من أربعة</span><span id="caseTag">دليل 01</span></div>
+    <div class="progress"><span id="progressBar" style="width:25%"></span></div>
+    <h2 id="sceneTitle"></h2>
+    <div id="sceneBody"></div>
+    <h3 id="questionTitle">ما قرارك؟</h3>
+    <div class="choices" id="choices"></div>
+    <button class="primary" id="continue" disabled>تثبيت الاختيار</button>
+    <button class="secondary hidden" id="restart">إعادة القضية من البداية</button>
+  </section>
+  <div class="footer">الأثر الموازي ©<br>فكرة وتطوير: علي | Ali<br>قصة خيالية تفاعلية • القضية تنتهي خلال أربعة أجزاء</div>
+</main>
+<script>
+const scenes = {
+  1: {
+    title:"الجزء الأول — الباب عند الثامنة",
+    tag:"دليل 01 • الصورة",
+    body:`<p>تقرّب الصورة من الضوء. انعكاس خافت على زجاج الباب يكشف طرف كمّ شخص واقف داخل البيت. لا يظهر وجهه، لكن على معصمه ساعة متوقفة عند <b>7:58</b>.</p><p>في أسفل الصورة توقيت الإرسال: 11:48 ليلًا. الصورة حديثة، لكن ظلّ الشخص فيها يتجه نحو الداخل، كأنه لم يكن يصوّر الباب من الخارج.</p><div class="evidence"><span class="num">01</span><div><b>الدليل الأول</b><br>صورة ملتقطة من الداخل، وساعة عند 7:58. لا دليل يثبت هوية الشخص.</div></div>`,
+    question:"شو بتعمل قبل ما توصل الساعة 8؟",
+    choices:[
+      {id:"A",title:"أفحص الصورة وأبحث عن انعكاس أو تفصيل مخفي",desc:"تبدأ من الدليل البصري."},
+      {id:"B",title:"أتصل بالرقم الذي اتصل بي",desc:"تواجه مصدر التحذير مباشرة."},
+      {id:"C",title:"أقرر أن أفتح الباب الساعة 8",desc:"تختبر التحذير بدل الهروب منه."}
+    ]
+  },
+  2: {
+    title:"الجزء الثاني — ما وراء الباب",
+    tag:"دليل 02 • المسار",
+    body:`<p id="pathText"></p><p>قبل الثامنة بدقيقة، يصل إشعار جديد: <b>«لا تصدّق أول شخص يقول إنه جاء لينقذك.»</b></p><p>على الأرض أمام الباب ظرف رفيع، لا يحمل اسمًا. داخله نسخة من مفتاح قديم وبطاقة مكتوب عليها: <b>«غرفة 17 — لا تدخل وحدك.»</b></p><div class="evidence"><span class="num">02</span><div><b>الدليل الثاني</b><br>المفتاح والبطاقة يربطان التحذير بمكان محدد، لكنهما لا يثبتان أن الخطر حقيقي.</div></div>`,
+    question:"كيف تتعامل مع المفتاح؟",
+    choices:[
+      {id:"A",title:"أذهب إلى غرفة 17 وأفحصها أولًا",desc:"تبحث عن أثر مادي."},
+      {id:"B",title:"أطلب من شخص أثق به أن يرافقني",desc:"ترفض مواجهة المجهول وحدك."},
+      {id:"C",title:"أبحث عن صاحب الرسالة قبل الذهاب",desc:"تحاول تحديد من يوجّهك."}
+    ]
+  },
+  3: {
+    title:"الجزء الثالث — التسجيل الناقص",
+    tag:"دليل 03 • الصوت",
+    body:`<p id="pathText"></p><p>داخل غرفة 17 تجد جهاز تسجيل قديمًا وملفًا يحمل تاريخ الغد. التسجيل قصير، وفيه صوت يقول: <b>«المكالمة لم تكن تحذيرًا مما سيحدث. كانت اختبارًا لما ستفعله عندما تخاف.»</b></p><p>بعدها يُسمع صوت باب يُغلق، ثم جملة منخفضة: <b>«احذف اسمي من النسخة النهائية.»</b></p><div class="evidence"><span class="num">03</span><div><b>الدليل الثالث</b><br>التسجيل يلمّح إلى تلاعب، لكنه لا يكشف من أصدر التعليمات ولا ما الذي كان يُختبر.</div></div>`,
+    question:"ما آخر شيء تتحقق منه قبل المواجهة؟",
+    choices:[
+      {id:"A",title:"أقارن الصوت بالمكالمة الأولى",desc:"تبحث عن تطابق أو اختلاف."},
+      {id:"B",title:"أفحص تاريخ الملف ومَن أنشأه",desc:"تتبع أثرًا تقنيًا."},
+      {id:"C",title:"أواجه الشخص الذي ظهر في الأدلة",desc:"تطلب جوابًا مباشرًا."}
+    ]
+  },
+  4: {
+    title:"الجزء الرابع — الحقيقة التي بقيت",
+    tag:"الخاتمة • القضية مغلقة",
+    body:`<p id="pathText"></p><p>تصل إلى الشخص الذي رتّب الاختبار: <b>نديم، صديقك القديم.</b> يعترف بأنه صوّر الباب من الداخل قبل أيام، وسجّل صوته ثم استخدم رقمًا محوّلًا ليجعل الاتصال يبدو صادرًا من هاتفك. كان يريد أن يعرف إن كنت ستتصرف بدافع الخوف أم ستتحقق من الأدلة.</p><p>لكن نديم ينكر أنه كتب الجملة الأخيرة في التسجيل، ولا يعرف مَن وضع مفتاح غرفة 17 عند بابك. تُظهر بيانات الملف أن التسجيل جُمّع من مقطعين مختلفين؛ أحدهما أُضيف بعد إنشاء الملف الأصلي.</p><div class="quote"><b>الخلاصة المثبتة:</b> الاتصال كان مُدبّرًا، والصورة قديمة، والتسجيل جرى تعديله. <b>ما لم يُحسم:</b> مَن أضاف المقطع الأخير، ولماذا اختار الساعة الثامنة تحديدًا.</div><p>تُغلق القضية بناءً على الأدلة المتاحة، لا على التخمين. لم يكن عليك تصديق التحذير أو تجاهله؛ كان عليك أن تتحقق قبل أن تمنحه سلطة على قرارك.</p><p><b>نهاية القضية 001، {{player}}.</b> القرار غيّر الطريق، لكنه لم يغيّر الحقائق التي أثبتتها الأدلة.</p>`,
+    question:"انتهى التحقيق. شو بتحب تعمل؟",
+    choices:[
+      {id:"A",title:"إعادة القضية بقرار مختلف",desc:"جرّب مسارًا آخر."},
+      {id:"B",title:"إغلاق الملف",desc:"إنهاء التجربة."}
+    ]
+  }
+};
+let part=1, selected=null, history=[], playerName="";
+const $=id=>document.getElementById(id);
+function escapeHTML(value){
+ return String(value).replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+}
+$("start").addEventListener("click",()=>{
+ playerName=$("playerName").value.trim();
+ if(!playerName){
+  $("nameError").textContent="اكتب اسمك أولًا حتى نفتح القضية باسمك.";
+  $("playerName").focus();
+  return;
+ }
+ $("nameError").textContent="";
+ $("welcomeTitle").textContent=`أهلًا ${playerName}، ملفّك بانتظارك.`;
+ $("intro").classList.add("hidden");
+ $("game").classList.remove("hidden");
+ render();
+ scrollToTop();
+});
+$("playerName").addEventListener("keydown",e=>{if(e.key==="Enter")$("start").click()});
+function scrollToTop(){ window.scrollTo({top:0,behavior:"smooth"}); }
+function render(){
+ const s=scenes[part];
+ $("partLabel").textContent=`الجزء ${["الأول","الثاني","الثالث","الرابع"][part-1]} من أربعة`;
+ $("caseTag").textContent=s.tag+" • المحقّق: "+playerName;
+ $("progressBar").style.width=(part*25)+"%";
+ $("sceneTitle").textContent=s.title;
+ $("sceneBody").innerHTML=s.body.replaceAll("{{player}}",escapeHTML(playerName));
+ if(part>1){
+   const prev=history[part-2];
+   const summary={
+    1:{A:"أعدت فحص الصورة، ولاحظت أن انعكاس الساعة لا يثبت أن صاحبها كان داخل البيت وقت التصوير.",B:"عاد الاتصال إلى البريد الصوتي، لكن خلف النغمة سمعت صوت قطار بعيدًا.",C:"انتظرت حتى الثامنة، ولم يحدث شيء عند الباب؛ بعد دقيقة ظهر الظرف."},
+    2:{A:"وصلت إلى غرفة 17 وحدك، ووجدت آثار غبار مقطوعة حول جهاز التسجيل.",B:"رافقك شخص تثق به، لكنه تعرّف إلى المفتاح وقال إنه رآه قبل سنوات.",C:"بحثت عن صاحب الرسالة، فاكتشفت أن الظرف أُرسل من صندوق بريد مهجور."},
+    3:{A:"الصوت في التسجيل يشبه صوت المكالمة، لكنه أبطأ قليلًا؛ لا يكفي ذلك لتأكيد الهوية.",B:"تاريخ الملف أقدم من المقطع الأخير بيومين، ما يشير إلى تعديل لاحق.",C:"واجهت نديم، فاعترف بأنه يعرف الغرفة لكنه نفى تسجيل الجملة الأخيرة."}
+   };
+   $("pathText").textContent=summary[part-1]?.[prev]||"وصلت إلى هذه المرحلة بعد اختيارك السابق، وبقيت بعض التفاصيل غير محسومة.";
+ }
+ $("questionTitle").textContent=s.question;
+ $("choices").innerHTML="";
+ selected=null;$("continue").disabled=true;
+ s.choices.forEach(c=>{
+  const b=document.createElement("button");b.className="choice";b.type="button";
+  b.innerHTML=`<span class="letter">${c.id}</span><span><b>${c.title}</b><small>${c.desc}</small></span>`;
+  b.addEventListener("click",()=>{selected=c.id;[...$("choices").children].forEach(x=>x.classList.remove("selected"));b.classList.add("selected");$("continue").disabled=false});
+  $("choices").appendChild(b);
+ });
+ $("continue").textContent=part===4?"إنهاء / إعادة اللعب":"تثبيت الاختيار";
+ $("restart").classList.toggle("hidden",part!==4);
+}
+$("continue").addEventListener("click",()=>{
+ if(!selected)return;
+ if(part===4){
+  if(selected==="A"){part=1;history=[];$("continue").classList.remove("hidden");$("restart").classList.add("hidden");render();scrollToTop();return;}
+  $("sceneBody").innerHTML=`<div class="quote">تم إغلاق القضية 001: «المكالمة الأخيرة».</div><p>الأدلة الثابتة: اتصال مدبّر، صورة قديمة، وتسجيل جرى تعديله.</p><p>السؤال المتبقي: من أضاف المقطع الأخير، ولماذا؟</p><p>شكرًا لأنك لعبت <b>الأثر الموازي</b>.</p>`;
+  $("choices").innerHTML="";$("questionTitle").textContent="القضية مغلقة";$("continue").classList.add("hidden");$("restart").classList.remove("hidden");scrollToTop();return;
+ }
+ history.push(selected);part++;render();scrollToTop();
+});
+$("restart").addEventListener("click",()=>{part=1;selected=null;history=[];$("continue").classList.remove("hidden");$("intro").classList.add("hidden");$("game").classList.remove("hidden");render();scrollToTop()});
+</script>
+</body>
+</html>
